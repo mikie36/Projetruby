@@ -1,0 +1,34 @@
+<h1>Editing scene_chapitre</h1>
+
+<%= form_for(@scene_chapitre) do |f| %>
+  <% if @scene_chapitre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scene_chapitre.errors.count, "error") %> prohibited this scene_chapitre from being saved:</h2>
+
+      <ul>
+      <% @scene_chapitre.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :chapitre_id %><br />
+    <%= f.collection_select(:chapitre_id, Chapitre.where(id: params[:id]), :id, :titre, {}, {}) %>
+    
+  </div>
+  <div class="field">
+    <%= f.label :scene_id %><br />
+    <%= f.collection_select(:scene_id, Scene.all, :id, :recit, {}, {}) %>
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @scene_chapitre %> |
+<%= link_to 'Back', scene_chapitres_path %>

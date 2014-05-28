@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lieu_id: 1
+  perso_id: 1
+  periode_id: 1
+  recit: MyText
+
+two:
+  lieu_id: 1
+  perso_id: 1
+  periode_id: 1
+  recit: MyText

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<h1>Anecdote</h1>
+  <b><%= nomAnecdote(@id) %></b>
+
+
+</p>
+
+<table>
+  <tr>
+    <th>Theme</th>
+<th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @result.each do |r| %>
+  <tr>
+    <td><%= nomTheme(r.theme_id) %></td>
+
+    <td><%= link_to 'Edit', edit_theme_anecdote_path(r) %></td>
+    <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= link_to 'Ajouter un theme', edit_theme_anecdote_path %></br>
+
+<%= link_to ' <== Back', anecdotes_path %>

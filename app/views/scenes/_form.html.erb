@@ -1,0 +1,30 @@
+<%= form_for(@scene) do |f| %>
+  <% if @scene.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scene.errors.count, "error") %> prohibited this scene from being saved:</h2>
+
+      <ul>
+      <% @scene.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lieu_id %><br />
+    <%= f.collection_select(:lieu_id, Lieu.all, :id, :nom, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :periode_id %><br />
+    <%= f.collection_select(:periode_id, Periode.all, :id, :date, {}, {}) %>
+  </div>
+  <div class="field">
+    <%= f.label :recit %><br />
+    <%= f.text_area :recit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

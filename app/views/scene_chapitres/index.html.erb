@@ -1,0 +1,25 @@
+<h1>Listing scene_chapitres</h1>
+
+<table>
+  <tr>
+    <th>Scene</th>
+    <th>Chapitre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scene_chapitres.each do |scene_chapitre| %>
+  <tr>
+    <td><%= scene_chapitre.scene_id %></td>
+    <td><%= scene_chapitre.chapitre_id %></td>
+    <td><%= link_to 'Show', scene_chapitre %></td>
+    <td><%= link_to 'Edit', edit_scene_chapitre_path(scene_chapitre) %></td>
+    <td><%= link_to 'Destroy', scene_chapitre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scene chapitre', new_scene_chapitre_path %>

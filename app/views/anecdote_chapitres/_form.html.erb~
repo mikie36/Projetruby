@@ -1,0 +1,29 @@
+<%= form_for(@anecdote_chapitre) do |f| %>
+  <% if @anecdote_chapitre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anecdote_chapitre.errors.count, "error") %> prohibited this anecdote_chapitre from being saved:</h2>
+
+      <ul>
+      <% @anecdote_chapitre.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chapitre_id %><br />
+    <%= f.number_field :chapitre_id %>
+    <%= f.collection_select(:chapitre_id, Chapitre.all, :id, :recit, {}, {}) %>
+  </div>
+ 
+
+  <div class="field">
+    <%= f.label :anecdote_id %><br />
+    <%= f.number_field :anecdote_id %>
+    <%= f.collection_select(:anecdote_id, Anecdote.all, :id, :recit, {}, {}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

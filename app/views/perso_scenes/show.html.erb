@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1>Scene</h1>
+  <b><%= nomScene(@id) %></b>
+</p>
+
+<p>
+  <b>Scene:</b>
+  <%= @perso_scene %>
+</p>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th></th>
+    <th></th>
+
+  </tr>
+
+<% @result.each do |r| %>
+  <tr>
+    <td><%= nomPerso(r.perso_id) %></td>
+    <td><%= prenomPerso(r.perso_id) %></td>
+
+    <td><%= link_to 'Edit', edit_perso_scene_path(r) %></td>
+    <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Ajouter un theme', edit_perso_scene_path %></br>
+
+<%= link_to ' <== Back', scenes_path %>

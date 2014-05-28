@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projetruby</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Exemple menu déroulant</title>
+	<link rel="stylesheet" media="all" href="styles.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	       $("#menu li").hover(
+	          function() {
+	             $(this).addClass("ensurvol");
+		     $("ul", this).css("display", "block");
+		  },
+		  function() {
+		     $("ul", this).css("display", "none");
+	             $(this).removeClass("ensurvol");
+	          }
+	       );
+	    });
+	</script>
+  </head>
+  <body>
+
+
+    <div id="page">
+	<div id="entete">
+	<h1>ENTETE</h1>
+	</div>
+	<div id="navigation">
+		<ul id="menu">
+			<li class="premier">
+				<%= link_to "Acueille", chapitres_path %>
+
+			</li>
+			<li>
+				<%= link_to "Chapitre", chapitres_path %>
+				
+			</li>
+			<li>
+				<%= link_to "Scene", scenes_path %>
+				<ul>
+					<li><%= link_to "Personnage", personnages_path %></li>
+					<li><%= link_to "Lieu", lieus_path %></li>
+					<li><%= link_to "Periode", periodes_path %></li>
+				</ul>
+			</li>
+			<li><%= link_to "Anecdote", anecdotes_path %>
+				<ul>
+					<li><%= link_to "Sujet", sujets_path %></li>
+					<li><%= link_to "Theme", themes_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">help</a>
+				
+			</li>
+		</ul>
+		<br class="clearall" />
+	</div>
+	<div id="contenu">
+	<%= yield %>
+	</div>
+	<div id="pied">
+	Gros pied de page hyper tendance ;)
+	</div>
+</div>
+      
+
+  </body>
+</html>
+

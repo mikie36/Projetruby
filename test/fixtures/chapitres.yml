@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titre: 1
+  numero: 1
+  scene_id: 1
+  anecdote_id: 1
+
+two:
+  titre: 1
+  numero: 1
+  scene_id: 1
+  anecdote_id: 1

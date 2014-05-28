@@ -1,0 +1,24 @@
+<%= form_for(@perso_scene) do |f| %>
+  <% if @perso_scene.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@perso_scene.errors.count, "error") %> prohibited this perso_scene from being saved:</h2>
+
+      <ul>
+      <% @perso_scene.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :perso_id %><br />
+    <%= f.collection_select(:perso_id, Personnage.all, :id, :nom, {}, {}) %>
+  </div>
+  <div class="field">
+    <%= f.label :scene_id %><br />
+    <%= f.collection_select(:scene_id, Scene.all, :id, :recit, {}, {}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

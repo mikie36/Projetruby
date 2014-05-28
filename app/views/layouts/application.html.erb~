@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projetruby</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Exemple menu déroulant</title>
+	<link rel="stylesheet" media="all" href="styles.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	       $("#menu li").hover(
+	          function() {
+	             $(this).addClass("ensurvol");
+		     $("ul", this).css("display", "block");
+		  },
+		  function() {
+		     $("ul", this).css("display", "none");
+	             $(this).removeClass("ensurvol");
+	          }
+	       );
+	    });
+	</script>
+  </head>
+  <body>     
+    <header>
+    <div>
+    </br></br></br></br>
+    <div id="page">
+	<div id="entete">
+	<h1>ENTETE</h1>
+	</div>
+	<div id="navigation">
+		<ul id="menu">
+			<li class="premier">
+				<a href="#">Accueil</a>
+				<ul>
+					<li><a href="#">Sous-item 1.1</a></li>
+					<li><a href="#">Sous-item 1.2</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Chapitre</a>
+				<ul>
+					<li><a href="#">Sous-item 2.1</a></li>
+					<li><a href="#">Sous-item 2.2</a></li>
+
+					<li><a href="#">Sous-item 2.3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Scene</a>
+				<ul>
+					<li><a href="#">Sous-item 3.1</a></li>
+					<li><a href="#">Sous-item 3.2</a></li>
+					<li><a href="#">Sous-item 3.3</a></li>
+					<li><a href="#">Sous-item 3.4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Anecdote</a>
+				<ul>
+					<li><a href="#">Ajouter Anecdote</a></li>
+					<li><%= link_to "Ajouter Theme a Anecdote", theme_anecdotes_path %></li>
+					<li><%= link_to "Sujet", sujets_path %></li>
+					<li><%= link_to "Theme", themes_path %></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">help</a>
+				
+			</li>
+		</ul>
+		<br class="clearall" />
+	</div>
+	</header>
+	<div id="contenu">
+	<h2>CONTENU</h2>
+	<%= yield %>
+	</div>
+	<div id="pied">
+	Gros pied de page hyper tendance ;)
+	</div>
+</div>
+      
+    </div>
+  </body>
+</html>
+

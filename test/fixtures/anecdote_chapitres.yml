@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  anecdote_id: 1
+  chapitre_id: 1
+
+two:
+  anecdote_id: 1
+  chapitre_id: 1

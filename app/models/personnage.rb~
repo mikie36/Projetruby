@@ -1,0 +1,5 @@
+class Personnage < ActiveRecord::Base
+  attr_accessible :nom, :prenom
+  has_many :perso_scene
+  has_many :scene, through: :perso_scene
+end

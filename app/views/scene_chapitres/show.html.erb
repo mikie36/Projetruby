@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Chapitre</b>
+  <%= nomChapitre(@id) %>
+</p>
+
+
+<h1>Scene</h1>
+<table>
+  <tr>
+    <th>Recit</th>
+    <th></th>
+    <th></th>
+
+
+  </tr>
+
+<% @result.each do |r| %>
+  <tr>
+    <td><%= nomScene(r.scene_id) %></td>
+
+    <td><%= link_to 'Edit', edit_scene_chapitre_path(r) %></td>
+    <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Ajouter une Scene', edit_scene_chapitre_path %></br>
+<%= link_to ' <== Back', chapitres_path %>

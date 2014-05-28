@@ -1,0 +1,27 @@
+<h1>Listing anecdotes</h1>
+
+<table>
+  <tr>
+    <th>Sujet</th>
+    <th>Recit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @anecdotes.each do |anecdote| %>
+  <tr>
+    <td><%= nomSujet(anecdote.sujet_id) %></td>
+    <td><%= anecdote.recit %></td>
+    <td><%= link_to 'Show', anecdote %></td>
+    <td><%= link_to 'Edit', edit_anecdote_path(anecdote) %></td>
+    <td><%= link_to 'Ajouter ou Edit Theme', theme_anecdote_path(anecdote) %></td>
+    <td><%= link_to 'Destroy', anecdote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouvelle Anecdote', new_anecdote_path %>

@@ -1,0 +1,4 @@
+class Sujet < ActiveRecord::Base
+  attr_accessible :nom
+  has_one :ancedote
+end

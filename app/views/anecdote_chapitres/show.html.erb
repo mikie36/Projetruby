@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Chapitre</b>
+  <%= nomChapitre(@id) %>
+</p>
+
+
+<h1>Anecdote</h1>
+<table>
+  <tr>
+    <th>Recit</th>
+
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @result.each do |r| %>
+  <tr>
+    <td><%= nomAnecdote(r.anecdote_id) %></td>
+
+<td><%= link_to 'Edit', edit_anecdote_chapitre_path(r) %></td>
+<td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Ajouter un theme', edit_anecdote_chapitre_path %></br>
+<%= link_to ' <== Back', chapitres_path %>

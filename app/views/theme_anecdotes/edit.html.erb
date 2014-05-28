@@ -1,0 +1,31 @@
+<h1>Editing theme_anecdote</h1>
+
+<%= form_for(@theme_anecdote) do |f| %>
+  <% if @theme_anecdote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@theme_anecdote.errors.count, "error") %> prohibited this theme_anecdote from being saved:</h2>
+
+      <ul>
+      <% @theme_anecdote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+    <%= f.label :anecdote_id %><br />
+    <%= f.collection_select(:anecdote_id, Anecdote.where(id: params[:id]), :id, :recit, {}, {}) %>
+  </div>
+  <div class="field">
+    <%= f.label :theme_id %><br />
+    <%= f.collection_select(:theme_id, Theme.all, :id, :nom, {}, {}) %>
+  </div>
+  
+  <div class="actions">
+  </br>
+  </br>
+    <%= f.submit "Ajouter Theme" %>
+  </div>
+<% end %>
+
+<%= link_to ' <==Back', theme_anecdotes_path(@id) %>

@@ -1,0 +1,34 @@
+<h1>Editing perso_scene</h1>
+
+<%= form_for(@perso_scene) do |f| %>
+  <% if @perso_scene.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@perso_scene.errors.count, "error") %> prohibited this perso_scene from being saved:</h2>
+
+      <ul>
+      <% @perso_scene.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scene_id %><br />
+    <%= f.collection_select(:scene_id, Scene.where(id: params[:id]), :id, :recit, {}, {}) %>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :perso_id %><br />
+    
+    <%= f.collection_select(:perso_id, Personnage.all, :id, :nom, {}, {}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Ajouter Personnage"%>
+  </div>
+<% end %>
+
+
+<%= link_to ' <== Back', perso_scenes_path %>

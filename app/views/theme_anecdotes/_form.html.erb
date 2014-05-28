@@ -1,0 +1,25 @@
+<%= form_for(@theme_anecdote) do |f| %>
+  <% if @theme_anecdote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@theme_anecdote.errors.count, "error") %> prohibited this theme_anecdote from being saved:</h2>
+
+      <ul>
+      <% @theme_anecdote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :theme_id %><br />
+    <%= f.collection_select(:theme_id, Theme.all, :id, :nom, {}, {}) %>
+  </div>
+  <div class="field">
+    <%= f.label :anecdote_id %><br />
+    <%= f.collection_select(:anecdote_id, Anecdote.all, :id, :recit, {}, {}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

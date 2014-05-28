@@ -1,0 +1,6 @@
+class Periode < ActiveRecord::Base
+  attr_accessible :date
+  has_one :scene
+  validates :debut,  presence: true
+  validates :fin,  presence: true
+end

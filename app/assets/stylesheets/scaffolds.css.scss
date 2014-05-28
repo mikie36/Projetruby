@@ -1,0 +1,176 @@
+/* MISE EN FORME DE BASE */
+  body,html {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+    color:#000;
+  }
+  
+  html {
+    font-size: 100%;
+  }
+  
+  body {
+    font-size: .80em;
+    background:#000;
+  }
+  
+  .clearall {
+    clear:both;
+    display:none;
+  }
+  
+  #page{
+    margin:0px auto 0px auto;
+    padding:0px 0px 0px 0px;
+    width:962px;
+    background: #ddd;
+    border:10px solid #fff;
+  }
+  
+  #entete {
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+    height:120px;
+    background: #333;
+    color:#fff;
+  }
+  
+  #contenu {
+    background: #fff;
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+    height:450px;
+  }
+  
+  #pied {
+    height:250px;
+    background: #ddd;
+    margin: 0px 0px 0px 0px;
+    padding: 20px 20px 20px 20px;
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+  }
+/* FIN MISE EN FORME DE BASE */
+
+/*
+**************************************************************************
+*/
+
+/* MENU DEROULANT FULL CSS SUR 2 NIVEAUX AVEC BORDURE ITEMS GAUCHE */
+  
+  /* ELEMENT CONTENEUR DU MENU */
+  div#navigation{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #aaa;
+    width: 960px;
+    height: 25px;
+    background: #fff;
+    text-align: left;
+  }
+  
+  /* LISTE DE PREMIER NIVEAU ET DE SECOND NIVEAU */
+  ul#menu, ul#menu li ul { 
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+    line-height: 25px;
+  }
+  
+  /* ITEMS LISTE DE PREMIER NIVEAU */
+  ul#menu li {
+    display: block;
+    float: left;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border-left: 1px solid #aaa;
+    width: 191px; /* 960px / 5 = 192 px, on enlÃ¨ve 1px de bordure gauche */
+    background: #ccc;
+  }
+  
+  /* TOUS LES LIENS DU MENU */
+  ul#menu a {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    line-height: 25px;
+    width: 191px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* TOUS LES LIENS DU MENU EN SURVOL */
+  ul#menu a:hover, ul#menu li:hover a, #menu li.ensurvol a {
+    border-bottom:1px solid #ddd;
+    background:#eee;
+    color:#333;
+  }
+  
+  /* TOUS LES LIENS ACTIFS */
+  ul#menu a.actif, ul#menu a.actif:hover, ul#menu li:hover a.actif, #menu li.ensurvol a.actif { /* tous liens actifs */
+    background:#fff;
+    border-bottom:1px solid #fff;
+    color:#333;
+  }
+  
+  /* SURCHARGE LISTE DE SECOND NIVEAU */
+  ul#menu li ul { 
+    position:absolute;
+    width :191px;
+    left:-999em;
+    z-index:20;
+  } 
+  
+  /* redÃ©finition de la position de la liste secondaire en survol de l'item parent de la liste principale */
+  ul#menu li:hover ul, #menu li.ensurvol ul {
+    margin-left:-1px;
+    left:auto;
+  }
+  
+  /* SURCHARGE ITEMS LISTE DE SECOND NIVEAU */
+  ul#menu li ul li {
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+  }
+  
+  /* SURCHARGE LIENS ITEMS LISTE DE SECOND NIVEAU */
+  ul#menu li ul li a, ul#menu li:hover ul li a, #menu li.ensurvol ul li a{ 
+    background:#ccc;
+    border-bottom:1px solid #aaa;
+    color:#fff;
+  }
+  
+  /* SURCHARGE LIENS SURVOLES ITEMS LISTE DE SECOND NIVEAU */
+  ul#menu li ul li a:hover, ul#menu li:hover ul li a:hover, #menu li.ensurvol ul li a:hover{ 
+    background:#eee;
+    border-bottom:1px solid #aaa;
+    color:#333;
+  }
+  
+  /* SURCHARGE ELEMENTS FILS DU PREMIER ITEM DE LA LISTE PRINCIPALE */
+  ul#menu li.premier {
+    border-left:none;
+    width :192px;
+  }
+  ul#menu li.premier a, ul#menu li.premier a.actif { 
+    width :192px;
+  }
+  ul#menu li.premier ul li, #menu li.permier.ensurvol ul li { 
+    width :192px;
+  }
+  ul#menu li.premier a, ul#menu li.permier:hover ul li a, #menu li.permier.ensurvol ul li a {
+    width :192px;
+  }
+
+
+/* FIN MENU DEROULANT */
+
+/*
+**************************************************************************
+*/

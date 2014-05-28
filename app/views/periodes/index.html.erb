@@ -1,0 +1,23 @@
+<h1>Listing periodes</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @periodes.each do |periode| %>
+  <tr>
+    <td><%= periode.date %></td>
+    <td><%= link_to 'Show', periode %></td>
+    <td><%= link_to 'Edit', edit_periode_path(periode) %></td>
+    <td><%= link_to 'Destroy', periode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Periode', new_periode_path %>
